@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Styling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 50px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <form action="">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Type your name here..." id="name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Type your password here..." id="password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" placeholder="Type age here..." id="age" name="age">
+      </div>
+
+      <div class="form-group">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="others">Others
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label><input type="checkbox" name="html" value="html">HTML</label>
+        <label><input type="checkbox" name="css" value="css">CSS</label>
+        <label><input type="checkbox" name="javascript" value="js">JavaScript</label>
+        <label><input type="checkbox" name="reactjs" value="reactjs">ReactJS</label>
+      </div>
+
+      <button type="submit">Submit</button> <br>
+
+      <button type="reset">Reset</button> <br>
+      <button type="button">Button</button>
+      <!-- <button type="submit">Submit</button> -->
+    </form>
+  </center>
+</body>
+</html>
