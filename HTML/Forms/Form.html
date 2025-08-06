@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #5709e8;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form>
+        <label>FIRST NAME:</label>
+        <input type="text" maxlength="30" placeholder="max 30 characters a-z and A-Z"><br>
+
+        <label>LAST NAME:</label>
+        <input type="text" maxlength="30" placeholder="max 30 characters a-z and A-Z"><br>
+
+        <label>DATE OF BIRTH:</label>
+        <select>
+            <option>Day</option>
+        </select>
+        <select>
+            <option>Month</option>
+            <option>Jan</option><option>Feb</option><option>Mar</option>
+            <option>Apr</option><option>May</option><option>Jun</option>
+            <option>Jul</option><option>Aug</option><option>Sep</option>
+            <option>Oct</option><option>Nov</option><option>Dec</option>
+        </select>
+        <select>
+            <option>Year</option>
+            <script>
+                for (let i = 1980; i <= 2024; i++) {
+                    document.write(`<option>${i}</option>`);
+                }
+            </script>
+        </select><br>
+
+        <label>EMAIL ID:</label>
+        <input type="email"><br>
+
+        <label>MOBILE NUMBER:</label>
+        <input type="text" maxlength="10" placeholder="10 digit number"><br>
+
+        <label>GENDER:</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female<br>
+
+        <label>ADDRESS:</label>
+        <textarea rows="3" cols="40"></textarea><br>
+
+        <label>CITY:</label>
+        <input type="text" maxlength="30" placeholder="max 30 characters a-z and A-Z"><br>
+
+        <label>PIN CODE:</label>
+        <input type="text" maxlength="6" placeholder="6 digit number"><br>
+
+        <label>STATE:</label>
+        <input type="text" maxlength="30" placeholder="max 30 characters a-z and A-Z"><br>
+
+        <label>COUNTRY:</label>
+        <input type="text" value="India" readonly><br>
+
+        <label>HOBBIES:</label>
+        <input type="checkbox"> Drawing
+        <input type="checkbox"> Singing
+        <input type="checkbox"> Dancing
+        <input type="checkbox"> Sketching <br>
+        <label style="margin-left: 150px;">Others:</label>
+        <input type="text"><br>
+
+        <label>QUALIFICATION:</label>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Sl. No.</th>
+                <th>Examination</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Year of Passing</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Class X</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Class XII</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Graduation</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+        </table><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
