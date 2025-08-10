@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CSS Chessboard — HTML & CSS only</title>
+<style>
+  :root{
+    --light:#f0d9b5;
+    --dark:#b58863;
+    --board-gap:12px;
+    --label-color:#2b2b2b;
+    --square-size:8.5vmin; /* responsive square size */
+  }
+
+  /* Page layout */
+  html,body{height:100%;margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(180deg,#0f1724,#071029);
+    color: #fff;
+    padding:2rem;
+    box-sizing:border-box;
+  }
+
+  .chess-wrap{
+    display:inline-grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    gap:var(--board-gap);
+    align-items:center;
+    justify-items:center;
+  }
+
+  /* Rank (numbers) and file (letters) labels */
+  .files, .files-bottom{
+    display:flex;
+    gap:0;
+    align-items:center;
+    justify-content:center;
+    width: calc(var(--square-size)*8);
+  }
+  .file {
+    width: var(--square-size);
+    height: calc(var(--square-size)*0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--label-color);
+    font-weight:600;
+    background:transparent;
+    user-select:none;
+  }
+  .ranks{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .rank {
+    width: calc(var(--square-size)*0.25);
+    height: var(--square-size);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--label-color);
+    font-weight:600;
+    user-select:none;
+  }
+
+  /* Board grid */
+  .board {
+    display:grid;
+    grid-template-columns: repeat(8, var(--square-size));
+    grid-template-rows: repeat(8, var(--square-size));
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  }
+
+  /* Square styles */
+  .square{
+    width:var(--square-size);
+    height:var(--square-size);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: calc(var(--square-size) * 0.6);
+    line-height:1;
+    box-sizing:border-box;
+    position:relative;
+    cursor:default;
+    transition: background .12s, transform .08s;
+  }
+  .square.light{ background: var(--light); color:#222; }
+  .square.dark{ background: var(--dark); color:#111; }
+
+  /* Hover highlight */
+  .square:hover{ outline: 3px solid rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+  /* Piece styles (centered and accessible) */
+  .piece{
+    pointer-events:none;
+    font-family: "Segoe UI Symbol","DejaVu Sans", "Noto Color Emoji", serif;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* Small coordinate labels inside squares (optional) */
+  .square::after{
+    content: attr(data-coord);
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size:11px;
+    opacity: .12;
+    color: #000;
+  }
+
+  /* Responsive: keep board readable on narrow screens */
+  @media (max-width:720px){
+    :root{ --square-size:11.5vmin; } /* make squares a tad larger on phones */
+    .file{font-size:0.95rem}
+    .rank{font-size:0.95rem}
+  }
+
+  /* Centering helper for the brand/title */
+  .title {
+    color:#fff;
+    font-weight:700;
+    margin-bottom:8px;
+    text-align:center;
+    font-size:1rem;
+    letter-spacing:.6px;
+  }
+
+  /* Light styling for the outer wrapper */
+  .panel {
+    background: rgba(255,255,255,0.02);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  }
+</style>
+</head>
+<body>
+  <div class="panel chess-wrap" role="application" aria-label="Chessboard">
+    <!-- Top file labels (A..H) -->
+    <div></div> <!-- spacer to align with left rank labels -->
+    <div class="title">Chessboard — HTML &amp; CSS</div>
+    <div></div>
+
+    <div class="ranks" aria-hidden="true">
+      <!-- ranks shown left of board (8 down to 1) -->
+      <div class="rank">8</div>
+      <div class="rank">7</div>
+      <div class="rank">6</div>
+      <div class="rank">5</div>
+      <div class="rank">4</div>
+      <div class="rank">3</div>
+      <div class="rank">2</div>
+      <div class="rank">1</div>
+    </div>
+
+    <!-- The actual board -->
+    <div>
+      <div class="board" role="grid" aria-label="Chessboard squares">
+        <!-- Row 8 (a8..h8) -->
+        <div class="square dark" data-coord="a8" role="gridcell" aria-label="a8">
+          <span class="piece">&#9820;</span> <!-- black rook -->
+        </div>
+        <div class="square light" data-coord="b8" role="gridcell" aria-label="b8">
+          <span class="piece">&#9822;</span> <!-- black knight -->
+        </div>
+        <div class="square dark" data-coord="c8" role="gridcell" aria-label="c8">
+          <span class="piece">&#9821;</span> <!-- black bishop -->
+        </div>
+        <div class="square light" data-coord="d8" role="gridcell" aria-label="d8">
+          <span class="piece">&#9818;</span> <!-- black king -->
+        </div>
+        <div class="square dark" data-coord="e8" role="gridcell" aria-label="e8">
+          <span class="piece">&#9819;</span> <!-- black queen -->
+        </div>
+        <div class="square light" data-coord="f8" role="gridcell" aria-label="f8">
+          <span class="piece">&#9821;</span>
+        </div>
+        <div class="square dark" data-coord="g8" role="gridcell" aria-label="g8">
+          <span class="piece">&#9822;</span>
+        </div>
+        <div class="square light" data-coord="h8" role="gridcell" aria-label="h8">
+          <span class="piece">&#9820;</span>
+        </div>
+
+        <!-- Row 7 (a7..h7) - black pawns -->
+        <div class="square light" data-coord="a7"><span class="piece">&#9823;</span></div>
+        <div class="square dark" data-coord="b7"><span class="piece">&#9823;</span></div>
+        <div class="square light" data-coord="c7"><span class="piece">&#9823;</span></div>
+        <div class="square dark" data-coord="d7"><span class="piece">&#9823;</span></div>
+        <div class="square light" data-coord="e7"><span class="piece">&#9823;</span></div>
+        <div class="square dark" data-coord="f7"><span class="piece">&#9823;</span></div>
+        <div class="square light" data-coord="g7"><span class="piece">&#9823;</span></div>
+        <div class="square dark" data-coord="h7"><span class="piece">&#9823;</span></div>
+
+        <!-- Row 6 (empty) -->
+        <div class="square dark" data-coord="a6"></div>
+        <div class="square light" data-coord="b6"></div>
+        <div class="square dark" data-coord="c6"></div>
+        <div class="square light" data-coord="d6"></div>
+        <div class="square dark" data-coord="e6"></div>
+        <div class="square light" data-coord="f6"></div>
+        <div class="square dark" data-coord="g6"></div>
+        <div class="square light" data-coord="h6"></div>
+
+        <!-- Row 5 -->
+        <div class="square light" data-coord="a5"></div>
+        <div class="square dark" data-coord="b5"></div>
+        <div class="square light" data-coord="c5"></div>
+        <div class="square dark" data-coord="d5"></div>
+        <div class="square light" data-coord="e5"></div>
+        <div class="square dark" data-coord="f5"></div>
+        <div class="square light" data-coord="g5"></div>
+        <div class="square dark" data-coord="h5"></div>
+
+        <!-- Row 4 -->
+        <div class="square dark" data-coord="a4"></div>
+        <div class="square light" data-coord="b4"></div>
+        <div class="square dark" data-coord="c4"></div>
+        <div class="square light" data-coord="d4"></div>
+        <div class="square dark" data-coord="e4"></div>
+        <div class="square light" data-coord="f4"></div>
+        <div class="square dark" data-coord="g4"></div>
+        <div class="square light" data-coord="h4"></div>
+
+        <!-- Row 3 -->
+        <div class="square light" data-coord="a3"></div>
+        <div class="square dark" data-coord="b3"></div>
+        <div class="square light" data-coord="c3"></div>
+        <div class="square dark" data-coord="d3"></div>
+        <div class="square light" data-coord="e3"></div>
+        <div class="square dark" data-coord="f3"></div>
+        <div class="square light" data-coord="g3"></div>
+        <div class="square dark" data-coord="h3"></div>
+
+        <!-- Row 2 (white pawns) -->
+        <div class="square dark" data-coord="a2"><span class="piece">&#9817;</span></div>
+        <div class="square light" data-coord="b2"><span class="piece">&#9817;</span></div>
+        <div class="square dark" data-coord="c2"><span class="piece">&#9817;</span></div>
+        <div class="square light" data-coord="d2"><span class="piece">&#9817;</span></div>
+        <div class="square dark" data-coord="e2"><span class="piece">&#9817;</span></div>
+        <div class="square light" data-coord="f2"><span class="piece">&#9817;</span></div>
+        <div class="square dark" data-coord="g2"><span class="piece">&#9817;</span></div>
+        <div class="square light" data-coord="h2"><span class="piece">&#9817;</span></div>
+
+        <!-- Row 1 (white major pieces) -->
+        <div class="square light" data-coord="a1"><span class="piece">&#9814;</span></div>
+        <div class="square dark" data-coord="b1"><span class="piece">&#9816;</span></div>
+        <div class="square light" data-coord="c1"><span class="piece">&#9815;</span></div>
+        <div class="square dark" data-coord="d1"><span class="piece">&#9812;</span></div>
+        <div class="square light" data-coord="e1"><span class="piece">&#9813;</span></div>
+        <div class="square dark" data-coord="f1"><span class="piece">&#9815;</span></div>
+        <div class="square light" data-coord="g1"><span class="piece">&#9816;</span></div>
+        <div class="square dark" data-coord="h1"><span class="piece">&#9814;</span></div>
+      </div>
+    </div>
+
+    <div class="ranks" aria-hidden="true">
+      <!-- right side ranks (mirror, optional empty to match layout) -->
+      <div class="rank">8</div>
+      <div class="rank">7</div>
+      <div class="rank">6</div>
+      <div class="rank">5</div>
+      <div class="rank">4</div>
+      <div class="rank">3</div>
+      <div class="rank">2</div>
+      <div class="rank">1</div>
+    </div>
+
+    <div></div>
+    <div class="files" aria-hidden="true">
+      <div class="file">A</div>
+      <div class="file">B</div>
+      <div class="file">C</div>
+      <div class="file">D</div>
+      <div class="file">E</div>
+      <div class="file">F</div>
+      <div class="file">G</div>
+      <div class="file">H</div>
+    </div>
+    <div></div>
+  </div>
+</body>
+</html>
