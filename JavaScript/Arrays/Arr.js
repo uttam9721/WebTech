@@ -46,3 +46,61 @@
 // let arr9=[78,"hii",true,null,76];
 // arr9.unshift(10)  // add starting of the value
 // console.log(arr9);
+
+
+// reverse()
+// let arr10 =[1,2,3,4,5,6,8,9];
+// console.log(arr10.length);
+// arr10.reverse()
+// console.log(arr10);
+
+
+
+
+// slice()
+let arr1 =[10,true,null,10,"hello",10,68];
+console.log(arr1);
+// let arr2=arr1.slice(1,3);
+// console.log(arr2);
+
+
+
+// reverse()
+arr1.reverse();
+console.log(arr1);
+
+
+// to String 
+// let str = arr1.toString();
+// console.log(str);
+// console.log(typeof str);
+
+
+
+
+// join()
+// let str = arr1.join('-');
+// console.log(str);
+// console.log(typeof str);
+
+
+// includes()
+// let a = arr1.includes(10);
+// console.log(a);
+
+
+// indexOf()
+// let index = arr1.indexOf(10);
+// let index = arr1.indexOf(10,2);
+// console.log(index);
+
+
+
+// lastIndexOf()
+// let index = arr1.lastIndexOf(10);
+// console.log(index);
+
+
+
+
+// console.log(arr1.length);
