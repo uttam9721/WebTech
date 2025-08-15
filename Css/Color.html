@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover One, Color Another</title>
+<style>
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 1px solid black;
+    transition: background 0.3s ease;
+  }
+  .box1:hover + .box2 {
+    background: orange;
+  }
+  .box2:hover + .box3 {
+    background: rgb(12, 177, 89);
+  }
+  .box3:hover + .box4 {
+    background: rgb(86, 11, 208);
+  }
+  .box4:hover + .box5 {
+    background: rgb(222, 109, 10);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <div class="box box4"></div>
+  <div class="box box5"></div>
+</div>
+
+</body>
+</html>
