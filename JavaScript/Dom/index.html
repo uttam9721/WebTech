@@ -1,36 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>DOM Properties Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <div id="main">
-    Hello, I am the main div!
-  </div>
-
-  <script>
-    // Access element
-    const main = document.getElementById("main");
-
-    // Some common DOM properties you can use
-    console.log(main.id);             // "main"
-    console.log(main.tagName);        // "DIV"
-    console.log(main.className);      // "" (empty if no class)
-    console.log(main.innerHTML);      // "Hello, I am the main div!"
-    console.log(main.textContent);    // "Hello, I am the main div!"
-    console.log(main.outerHTML);      // Full HTML of this element
-    console.log(main.childNodes);     // NodeList of child nodes
-    console.log(main.parentNode);     // Parent element (body)
-    console.log(main.style);          // CSSStyleDeclaration object
-    console.log(main.attributes);     // All attributes of this element
-
-    // Layout & size
-    console.log(main.offsetHeight);   // Height including border
-    console.log(main.offsetWidth);    // Width including border
-    console.log(main.clientHeight);   // Height without border
-    console.log(main.clientWidth);    // Width without border
-    console.log(main.offsetTop);      // Distance from top
-    console.log(main.offsetLeft);     // Distance from left
-  </script>
+    <div id="main"></div>
+    <div id="img"></div>
 </body>
+<script src="./index.js" ></script>
 </html>
