@@ -5,20 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    *{
-        margin: 0px;
-        padding: 0px;
-    }
-    h1{
-        display: inline !important;
-        /* display: none; */
-        display: block;
-        background-color: #ccc;
-    }
-</style>
+    <style>
+        .header{
+            background-color: #ccc;
+            height: 70px;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .header img{
+            height: 100%;
+            border-radius: 50px;
+            /* aspect-ratio: 0px; */
+            mix-blend-mode: multiply;
+        }
+       .header a{
+        text-decoration: none;
+        color: black;
+       }
+       .mainContainer{
+        /* background-color: cyan; */
+        height: 70vh;
+        width: 100%;
+        border: 2px solid black;
+        display: flex;
+       }
+       .footer{
+        height: 20vh;
+        border: 2px solid black;
+        background-color: #8b8686;
+       }
+       .aside1{
+        height: 70vh;
+        width: 35%;
+        border: 2px solid black;
+        background-color: gray;
+
+       }
+  .aside {
+  height: 68.3vh;
+  width: 64%;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  grid-template-rows: repeat(2, 1fr); 
+  gap: 20px;
+  padding: 5px;
+  background-color: red;
+}
+
+.aside .sec {
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: cyan;
+}
+
+    </style>
 <body>
-    <h1>display</h1>
-    <h1>flex</h1>
+   <header class="header">
+    <img src="https://i.pinimg.com/736x/47/43/27/4743272cb7fbed0082f76c3815b3e90e.jpg" alt="">
+    <!-- <nav class="navlink"> -->
+        <a href="">
+            Home
+        </a><a href="">
+            About
+        </a><a href="">
+            Services
+        </a>
+    <!-- </nav> -->
+   </header>
+   <main class="mainContainer">
+    <!-- <div class="d"> -->
+    <aside class="aside1"></aside>
+    <aside class="aside">
+        <section class="sec"></section>
+        <section class="sec"></section>
+        <!-- <div> -->
+            <section class="sec"></section>
+        <section class="sec"></section>
+        <!-- </div> -->
+    </aside>
+    <!-- </div> -->
+   </main>
+   <footer class="footer">
+
+   </footer>
 </body>
 </html>
+
