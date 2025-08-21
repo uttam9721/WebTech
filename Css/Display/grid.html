@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        justify-content:0 auto;
+    }
+    .container{
+        width: 500px;
+        height: 500px;
+        border: 2px solid black;
+        /* margin-top: 100px; */
+        /* margin-left: 100px; */
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+        grid-template-row: repeat(3,auto);
+        /* background-color: black; */
+        gap: 10px;
+
+        /* background-color: black; */
+    }
+  
+    .box1{
+        background-color:green;
+       grid-area:4/2/1/1;
+    }
+    .box2{
+        grid-area:1/4/2/2;
+        background-color: green;
+        /* grid-area: 2/2/4/3; */
+    }
+    .box3{
+        grid-area: 1/4/2/4;
+        background-color: red;
+    }
+    .box4{
+        grid-area: 2/4/4/4;
+        background-color: green;
+    }
+    .box5{
+        grid-area:2/2/3/3;
+        background-color: yellow;
+    }
+    .box6{
+        grid-area: 2/1/2/4;
+        box-sizing: cyan;
+    }
+    .box7{
+        grid-area:3/2/3/3;
+        background-color: rgb(234, 31, 34);
+    }
+    .box8{
+        grid-area:3/2/3/4;
+        background-color: rgb(234, 31, 34);
+    }
+    .box9{
+        grid-area:3/3/3/3;
+        background-color: rgb(234, 31, 34);
+    }
+/*        
+        
+        
+    }
+    .box4{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        color: red !important;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+</body>
+</html>
