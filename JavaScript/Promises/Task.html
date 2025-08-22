@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Search Bar */
+    .search-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .search-container input {
+      width: 300px;
+      max-width: 90%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+    }
+    .search-container input:focus {
+      border-color: #f39c12;
+      box-shadow: 0px 0px 8px rgba(243, 156, 18, 0.5);
+    }
+
+    /* Product Grid */
+    .page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0px 0px 10px gray;
+      border-radius: 10px;
+      background: #fff;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h1 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    /* Full Button */
+    .card button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      background: green;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card button:hover {
+      background: rgb(100, 165, 2);
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    footer .social a:hover {
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🛒 MyShop</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search products...">
+  </div>
+
+  <!-- Products -->
+  <div class="page" id="product-container">
+    <!-- Cards will be generated dynamically -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MyShop. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#">🌐</a>
+      <a href="#">🐦</a>
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+    </div>
+  </footer>
+
+  <script>
+    const container = document.getElementById("product-container");
+    const searchInput = document.getElementById("searchInput");
+    let allProducts = [];
+
+    // Function to render products
+    function renderProducts(products) {
+      container.innerHTML = "";
+      if (products.length === 0) {
+        container.innerHTML = "<p>No products found.</p>";
+        return;
+      }
+      products.forEach(product => {
+        let card = document.createElement("div");
+        card.classList.add("card");
+
+        card.innerHTML = `
+          <img src="${product.thumbnail}" alt="${product.title}">
+          <h1>${product.title}</h1>
+          <div class="price"><b>₹ ${product.price}</b></div>
+          <div class="stock">Stock: ${product.stock}</div>
+          <div class="rating">⭐ ${product.rating}</div>
+          <button>Add to Cart</button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Fetch products
+    fetch("https://dummyjson.com/products")
+      .then(res => res.json())
+      .then(data => {
+        allProducts = data.products;
+        renderProducts(allProducts);
+      })
+      .catch(err => console.log(err));
+
+    // Search functionality
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = allProducts.filter(product =>
+        product.title.toLowerCase().includes(query)
+      );
+      renderProducts(filtered);
+    });
+  </script>
+</body>
+</html>
