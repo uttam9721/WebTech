@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Overlap demo</title>
+<style>
+  :root{
+    --img-w: 220px;              /* change this to resize images */
+    --overlap: calc(var(--img-w) / 2); /* negative margin = half the image */
+  }
+
+  *{box-sizing: border-box; margin:0; padding:0;}
+
+  body{
+    font-family: Arial, sans-serif;
+    padding:40px 0;
+    background:#f7f7f7;
+  }
+
+  .container{
+    width: 800px;
+    max-width: 95%;
+    margin: 0 auto;
+    border: 2px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;                 /* we handle overlap with negative margins */
+    padding: 24px;
+    position: relative;
+    overflow: visible;      /* allow images to overflow the border */
+    background: #fff;
+  }
+
+  .card { position: relative; }
+
+  /* image sizing */
+  .card img{
+    width: var(--img-w);
+    display: block;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* pull left image partly under the center */
+  .card1 {
+    margin-right: calc(-1 * var(--overlap));
+    z-index: 1;  /* behind burger */
+  }
+
+  /* center burger on top */
+  .card2 {
+    z-index: 3;  /* front */
+  }
+
+  /* pull right image partly under the center */
+  .card3 {
+    margin-left: calc(-1 * var(--overlap));
+    z-index: 1;  /* behind burger */
+  }
+
+  /* small screens: reduce images */
+  @media (max-width: 600px){
+    :root { --img-w: 140px; }
+  }
+</style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="card card1">
+        <img src="./drinkglass-removebg-preview.png" alt="Drink">
+      </div>
+
+      <div class="card card2">
+        <img src="./burger.png" alt="Burger">
+      </div>
+
+      <div class="card card3">
+        <img src="./frenchfries.png" alt="Fries / Finger chips">
+      </div>
+    </div>
+  </section>
+</body>
+</html>

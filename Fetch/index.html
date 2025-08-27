@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    .weather-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: white;
+      display: inline-block;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🌦 Weather App</h1>
+  <input type="text" id="city-input" placeholder="Enter city name">
+  <button id="search-btn">Get Weather</button>
+
+  <div id="weather" class="weather-box"></div>
+
+  <script>
+    const button = document.getElementById("search-btn");
+    const input = document.getElementById("city-input");
+    const weatherBox = document.getElementById("weather");
+
+    async function getData(key) {
+      const promise = await fetch(
+        `http://api.weatherapi.com/v1/current.json?key=3aeb6ba2abae4483b02140055252708&q=${key}&aqi=yes`
+      );
+      return await promise.json();
+    }
+
+    button.addEventListener("click", async () => {
+      if (input.value.trim() === "") {
+        alert("Please enter a city name!");
+        return;
+      }
+      try {
+        const result = await getData(input.value);
+        console.log(result);
+
+        weatherBox.innerHTML = `
+          <h2>${result.location.name}, ${result.location.country}</h2>
+          <p>🌡 Temperature: ${result.current.temp_c}°C</p>
+          <p>☁ Condition: ${result.current.condition.text}</p>
+          <img src="${result.current.condition.icon}" alt="Weather Icon">
+        `;
+      } catch (error) {
+        weatherBox.innerHTML = `<p style="color:red;">City not found!</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 40px;
+      background-color: #e0c0c0;
+      width: 800px;
+      margin-top: 100px !important;
+      /* margin-left: 100px; */
+      margin:0px auto;
+      
+
+    }
+
+    .main h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .main p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Grid for images */
+    .imgg {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .imgg img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid white;
+    }
+    .text{
+        width: 600px;
+        /* background-color: #c0b676; */
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="main">
+      <div class="text">
+        <h1>About Us Design Studio</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, rerum. Sunt ipsa nisi nam ut quo beatae labore molestiae perspiciatis rerum tenetur sapiente, reprehenderit, fugiat velit soluta earum, hic autem.
+          Saepe id, quo in non, doloremque modi possimus est, excepturi pariatur sunt deserunt molestiae vero? Quis eos dolorem distinctio porro libero ab, nobis aspernatur ex, error voluptatem consequatur magnam quasi.
+        </p>
+        <button>LEARN MORE</button>
+      </div>
+
+      <!-- Image grid -->
+      <div class="imgg">
+        <img src="https://images.pexels.com/photos/32682871/pexels-photo-32682871.jpeg" alt="">
+        <img src="https://images.pexels.com/photos/32682871/pexels-photo-32682871.jpeg" alt="">
+        <img src="https://images.pexels.com/photos/32682871/pexels-photo-32682871.jpeg" alt="">
+        <img src="https://images.pexels.com/photos/32682871/pexels-photo-32682871.jpeg" alt="">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
