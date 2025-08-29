@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action=" " id="form">
+  <h1>Form Handler</h1>
+  
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" placeholder="Write name here..."><br><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" placeholder="Write password here..."><br><br>
+  
+  <label for="confirmpassword">Confirm password:</label>
+  <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Write password here..."><br><br>
+  
+  <button type="submit">Submit here..</button>
+</form>
+
+</body>
+<script>
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent actual form submission
+    
+    let name = document.getElementById('name').value;
+    let password = document.getElementById('password').value;
+    let confirmpassword = document.getElementById('confirmpassword').value;
+
+    if (name === "" || password === "" || confirmpassword === "") {
+        alert('Please fill all fields');
+        return false;
+    }
+
+    if (password !== confirmpassword) {
+        alert('Passwords do not match');
+        return false;
+    }
+    if(password.length<8){
+            alert('password should be 8 character')
+            return false;
+    }
+    if(isNaN(password)){
+      alert('password should be number');
+      return false
+    }
+
+    alert('Form submitted successfully!');
+});
+</script>
+
+</html>
