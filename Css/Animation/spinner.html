@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .page{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* margin-top: 100px; */
+            height: 100vh;
+        }
+        .spinner{
+            height:200px;
+            width: 200px;
+            border-radius: 50%;
+            border:40px solid #a0a0a0;
+            border-top: 40px solid purple;
+            border-bottom:40px solid red;
+            animation-name:spin;
+            animation-duration:1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            /* animation-delay: ; */
+
+        }
+        @keyframes spin{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);           
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="spinner">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bounce W</title>
+  <style>
+    .page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 500px;
+      width: 500px;
+      border: 2px solid black;
+      position: relative;
+      overflow: hidden;
+      background-color: #ccc;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: crimson;
+      position: absolute;
+      animation: bounceW 3s infinite linear;
+    }
+
+    @keyframes bounceW {
+      0%   { top: 0; left: 0; }
+      25%  { top: 100%; left: 25%; transform: translateY(-100%); }
+      50%  { top: 0; left: 50%; }
+      75%  { top: 100%; left: 75%; transform: translateY(-100%); }
+      100% { top: 0; left: 100%; transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
