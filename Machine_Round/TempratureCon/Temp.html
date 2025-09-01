@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input[type="radio"] {
+      margin: 10px 5px;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: 15px;
+      color: #222;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Temperature Converter</h1>
+    <input type="text" id="textBox" placeholder="Enter value"> <br>
+
+    <input type="radio" name="unit" id="toFahrenheit">
+    <label for="toFahrenheit">Celsius → Fahrenheit</label> <br>
+
+    <input type="radio" name="unit" id="toCelsius">
+    <label for="toCelsius">Fahrenheit → Celsius</label> <br>
+
+    <button onclick="convert()">Submit</button>
+    <p class="result" id="result"></p>
+  </div>
+
+  <script>
+   
+    const textBox=document.getElementById("textBox");
+    const toFahrenheit=document.getElementById("toFahrenheit");
+    const toCelsius = document.getElementById("toCelsius");
+    const result = document.getElementById("result");
+    let temp;
+
+    function convert(){
+        if(toFahrenheit.checked){
+            temp = (textBox.value);
+                temp = temp*9/5+32;
+                result.textContent=temp.toFixed(1) + "°F";
+
+
+        }else if(toCelsius.checked){
+                temp = (textBox.value);
+                 temp = (temp-32)*(5/9);
+                result.textContent=temp.toFixed(1) + "°C";
+
+        }else{
+            result.textContent='Result here'
+        }
+    }
+  </script>
+</body>
+</html>

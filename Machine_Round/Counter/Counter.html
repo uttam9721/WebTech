@@ -4,55 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .container{
-            font-size: 30px;
-            display: flex;
-            gap: 20px;
-            height: 30px;
-            width: 50px;
-        }
-        .container button{
-            background-color: gray;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-        }
-        #countLabel{
-            font-size: 50px;
-            text-align: center;
-            margin-left: 100px;
-        }
-    </style>
 </head>
 <body>
-    <label for="" id="countLabel">0</label>
+    <label for="" id="text">0</label>
     <div class="container">
-        <button id="increaseBtn">increase</button>
-        <button id="decreaseBtn">decrease</button>
-        <button id="resetBtn">reset</button>
+        <button id="inc">Increase</button>
+        <button id="des">Decrease</button>
+        <button id="reset">Reset</button>
     </div>
+    <script>
+        const text =document.getElementById("text");
+        const inc = document.getElementById("inc");
+        const des = document.getElementById("des");
+        const reset = document.getElementById("reset");
+        let count=0;
+        inc.onclick=function(){
+            count++;
+            text.textContent=count;
+        }
+        des.onclick=function(){
+            count--;
+            text.textContent=count;
+        }
+        reset.onclick=function(){
+            count=0;
+            text.textContent=count;
+        }
+    </script>
 </body>
-<script>
-   let count =0;
-    const countLabel=document.getElementById("countLabel");
-    const increase=document.getElementById("increaseBtn");
-    const decrease=document.getElementById("decreaseBtn");
-    const reset=document.getElementById("resetBtn");
-    increase.onclick=function(){
-        count++;
-        countLabel.textContent=count;
-
-    }
-    decrease.onclick=function(){
-        count--;
-        countLabel.textContent=count;
-
-    }
-    reset.onclick=function(){
-        count=0;
-        countLabel.textContent=count;
-
-    }
-</script>
 </html>
