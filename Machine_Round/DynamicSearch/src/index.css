@@ -1,0 +1,67 @@
+/* App.css */
+
+/* Main container */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Search input */
+.app-container input {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto 25px auto;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.app-container input:focus {
+  border-color: #007bff;
+}
+
+/* Items container */
+.app-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Each item in row with 3 columns */
+.ite {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr; /* Image | Brand | Name */
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ite:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling */
+.ite img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Text styling */
+.ite p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
