@@ -1,0 +1,99 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* ! header css starts here */
+header {
+  padding: 0px 40px;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ! logo css here */
+.logo__home {
+  transform: translateX(-100%);
+  transition: 0.2s ease all;
+}
+.navigation-logo:hover .logo__home {
+  transform: translateX(0%);
+}
+.leftNav {
+  display: flex;
+  /* background-color: brown; */
+  height: 100%;
+  align-items: center;
+  gap: 50px;
+}
+.navLinks {
+  /* background-color: yellow; */
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+}
+.navLinks li {
+  height: 100%;
+}
+.navLinks a {
+  text-decoration: none;
+  /* background-color: white; */
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+header a:hover {
+  border-bottom: 2px solid #ff6900;
+  color: #ff6900;
+}
+.rightNav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 50px;
+}
+.rightNav a {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.support {
+  display: flex;
+  height: 100%;
+  gap: 40px;
+  align-items: center;
+}
+.icons {
+  display: flex;
+  gap: 40px;
+}
+/* ! dropdown css here  */
+.dropItems {
+  height: 400px;
+  width: 100vw;
+  background-color: #a0a0a0;
+  position: absolute;
+  left: 0px;
+  display: none;
+}
+.navLinks a:hover + .dropItems {
+  display: block;
+}
+.dropItems:hover{
+    display: block;
+}
+
+
+

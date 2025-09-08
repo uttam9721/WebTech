@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = prompt('i love javascript');
+// let result = str.split(" ").reverse().join(" ");
+// console.log(result);
+let result = str
+  .split(" ")
+  .map(ele => ele.charAt(0).toUpperCase() + ele.slice(1))
+  .join(" ");
+console.log(result);
+
+    </script>
+</body>
+</html>
