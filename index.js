@@ -1,92 +1,33 @@
-// // // let arr = ["Hello Bro", "Hi Man"];
-// // // let result =arr.map(str=>{
-// // //     return str.split(" ").map(e=>e[0]).join("");
-// // // })
-// // // console.log(result);
 
-
-
-// // // // let str = "uttam";
-// // // // let rev ="";
-// // // // for(let i =str.length-1;i>=0;i--){
-// // // //     rev=rev+str[i];
-// // // //     console.log(rev);
-// // // // }
-
-
-// // // let str = "nitin";
-// // // let result = str.split(" ").reverse().join(" ");
-// // // // console.log(result);
-// // // if(str==result){
-// // //     console.log("number is palindrome");
-// // // }else{
-// // //     console.log("number is not palindrome");
-    
-// // // }
-
-// // let obj = { a: 1 };
-// // let copy = obj;
-// // copy.a = 2;
-// // console.log(obj.a);
-
-// function curry(a) {
-//   return function(b) {
-//     return a + b;
-//   };
+// function Student(name, age) {
+//   this.name = name;
+//   this.age = age;
 // }
-// console.log(curry(2)(3)); // 5
 
-
-// let str = "i love javascript";
-// let result = str.split(" ").map(e=>e.charAt(0).toUpperCase()+e.slice(1))
-// console.log(result);
+// let obj = new Student("uttam", 22);
+// console.log(obj);
 
 
 
 
-// let arr = ["Hello Bro", "Hi Man"];
-// let result =arr.forEach(str=>{
-//     return let val= str.split(" ").map(e=>e[0]).join("");
+// let obj =({
+//     name:"uttam",
+//     age:22,
 // })
-// console.log(result);
-// // HB  HM
+// console.log(obj);
 
 
 
-// let arr = ["Hello Bro", "Hi Man"];
-// let result = arr.map(str => {
-//   return str.split(" ").map(e => e[0]).join("");
-// }).join(" ");
-// console.log(result);
-// // HB HM
+// closure => closure in an inner function that can access the property of outer function
+// outer function is a function which is contains within the one or more function and any type of variable etc .
 
+// function parent(){
+//     let val =10;
+//     function child(){
+//         return console.log(val);
+//         ;
+//     }
+//     child();
+// }
+// parent();
 
-// let arr =['a',10,'b',5,'c','3','d',2];
-//         for(let i=1;i<arr.length-1;i*2){
-//             let sum =0;
-
-//             if(arr[i]==typeof number){
-//                 sum=sum+arr[i];
-                
-//             }
-//             console.log(sum);
-//         }
-
-
-// let arr =['a',10,'b',5,'c','3','d',2];
-//         for(let i=0;i<arr.length;++i){
-//             console.log(arr[i]);
-           
-                
-//             }
-        
-let arr = ['a', 10, 'b', 5, 'c', 3, 'd', 2];
-let sum = 0;
-
-for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] == "number") {
-        sum = sum + arr[i];   // accumulate numbers
-    }
-}
-
-console.log(sum);  // Output: 17
