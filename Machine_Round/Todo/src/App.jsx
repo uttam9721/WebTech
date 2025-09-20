@@ -36,56 +36,6 @@
 // // export default App
 
 
-// import React,{useState} from 'react'
-
-// const App = () => {
-//     const [value,setValue]=useState("");
-//     let arr = [
-//       "7", "8", "9", "/", 
-//       "4", "5", "6", "*", 
-//       "1", "2", "3", "-", 
-//       "0", ".", "=", "+"
-//     ];
-//     const handler=(e)=>{
-//             e?.prevendDefault();
-//             let ans =eval(value);
-//             setValue(ans);
-
-//     }
-//     const clickBtn=(e)=>{
-//         const id = e.target.id;
-//         if(id==='C'){
-//             setValue("");
-
-//         }else{
-//             setValue((val)=>val+id);
-//         }
-
-//     }
-//   return (
-//     <>
-//      <form onSubmit={handler}>
-//         <input type="text" 
-//         value={value}
-//         onChange={(e)=>setValue(e.target.value)}
-//         placeholder='search here..' />
-//         <div onClick={clickBtn}>
-//             {arr.map((item,idx)=>{
-//                 return(
-//                     <button 
-//                     id={item}
-//                     key={idx}
-//                     >{item}</button>
-//                 )
-//             })}
-//         </div>
-//         </form> 
-//     </>
-//   )
-// }
-
-// export default App
-
 
 import React, { useState } from 'react';
 

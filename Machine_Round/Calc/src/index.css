@@ -1,0 +1,19 @@
+body{
+  /* background-color: gray; */
+}
+.btn{
+  display: flex;
+
+}
+input{
+
+}
+button{
+  width: 30px;
+  background-color: black;
+  grid-template-columns: repeat(4,1fr);
+  color: white;
+  gap: 20px;
+  height: 20px;
+
+}
