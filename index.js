@@ -31,3 +31,13 @@
 // }
 // parent();
 
+
+const a =10;
+let b=20;
+function App(){
+    console.log(a+b);
+    // a++;
+    
+    // console.log(a+b);   
+}
+App();
