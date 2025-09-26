@@ -158,18 +158,27 @@ let n=Number(prompt('Enter the number: '));
 // console.log(sum);
 
 
-let sum =0;
-let copy=n;
+// let sum =0;
+// let copy=n;
+// while(n>0){
+//     let rem=n%10;
+//     let fact =1;
+//     for(let i=1;i<=rem;i++){
+//         fact=fact*i;
+//     }
+//     sum=sum+fact;
+//     n=Math.floor(n/10);
+// }if (copy===sum) {
+//     console.log('strong');
+// }else{
+//     console.log('no');
+// }
+
+let rev=0;
 while(n>0){
     let rem=n%10;
-    let fact =1;
-    for(let i=1;i<=rem;i++){
-        fact=fact*i;
-    }
-    sum=sum+fact;
+    rev=rev*10+rem;
     n=Math.floor(n/10);
-}if (copy===sum) {
-    console.log('strong');
-}else{
-    console.log('no');
+
 }
+console.log(rev);
