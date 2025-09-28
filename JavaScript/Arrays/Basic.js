@@ -121,7 +121,7 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync({ sigint: true });
 
-let n=Number(prompt('Enter the number: '));
+// let n=Number(prompt('Enter the number: '));
 // let sum=0;
 // for(let i=1;i<=n;i++){
 //     sum=sum+i;
@@ -174,11 +174,72 @@ let n=Number(prompt('Enter the number: '));
 //     console.log('no');
 // }
 
-let rev=0;
-while(n>0){
-    let rem=n%10;
-    rev=rev*10+rem;
-    n=Math.floor(n/10);
+// let rev=0;
+// while(n>0){
+//     let rem=n%10;
+//     rev=rev*10+rem;
+//     n=Math.floor(n/10);
 
-}
-console.log(rev);
+// }
+// console.log(rev);
+
+
+// let arr=[10,20,30,40,50];
+// let sum =0;
+// let avg =0;
+// for(let i=0;i<arr.length;i++){
+//     sum=sum+arr[i];
+//     // avg=sum/arr.length;
+
+// }
+// console.log(avg);
+// let arr=[10,20,30,40,50,500];
+// let max=arr[0];
+// let smax=arr[0];
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]>max) {
+//         smax=max;
+//         max=arr[i];
+//     }else if (arr[i]>smax && arr[i]<max) {
+//         smax=arr[i]
+        
+//     }
+// }
+// console.log(smax);
+// let arr=[10,20,30,40,50];
+// let n =3;
+// for(let i=0;i<arr.length;i++){
+//     let count=1;
+//     for (let j =0; j < arr.length; j++) {
+//         if (arr[i]<arr[j]) {
+//             count++;
+//         }
+//     }
+//     if (count==n) {
+//         console.log(arr[i]); 
+//     }
+// }
+
+// let i=0,j=arr.length-1;
+// while(i<=j){
+//     let temp=arr[j];
+//     arr[j]=arr[i];
+//     arr[i]=temp;
+//     i++;
+//     j--;
+// }
+// console.log(arr);
+
+// let arr = [1,1,0,0,1,0,1,0,1,0,0,0,0,1,1,1,1,1];
+// let i=0;
+// let j=0;
+// while(i<arr.length){
+//     if (arr[i]!=0) {
+//         let temp=arr[i];
+//         arr[i]=arr[j];
+//         arr[j]=temp
+//         j++;
+//     }
+//     i++;
+// }
+// console.log(arr);
