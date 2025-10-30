@@ -65,7 +65,7 @@ const App = () => {
                   onClick={() =>
                     setStore(store.filter((_, i) => i !== idx))
                   }
-                  className="text-red-600 hover:text-red-800 font-semibold"
+                  className=" bg-blue-600 rounded cursor-pointer text-white-600 hover:text-red-800 font-semibold"
                 >
                   Delete
                 </button>
